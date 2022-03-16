@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AForcedSmile", "AForcedSmile\AForcedSmile.csproj", "{6887F8AD-23A7-41B7-9568-72C2ED5DBC9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsApi", "ModelsApi\ModelsApi.csproj", "{BC08BF0B-A4A0-4170-94ED-A8739D216F71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6887F8AD-23A7-41B7-9568-72C2ED5DBC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6887F8AD-23A7-41B7-9568-72C2ED5DBC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6887F8AD-23A7-41B7-9568-72C2ED5DBC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6887F8AD-23A7-41B7-9568-72C2ED5DBC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC08BF0B-A4A0-4170-94ED-A8739D216F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC08BF0B-A4A0-4170-94ED-A8739D216F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC08BF0B-A4A0-4170-94ED-A8739D216F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC08BF0B-A4A0-4170-94ED-A8739D216F71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4590D3D3-7451-4EF7-B8EB-54D4667A9BED}
+	EndGlobalSection
+EndGlobal
