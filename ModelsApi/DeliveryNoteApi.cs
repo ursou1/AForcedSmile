@@ -11,5 +11,6 @@ namespace ModelsApi
         public int Number { get; set; }
         public DateTime DeliveryDate { get; set; }
         public int ProviderId { get; set; }
+        public ProviderApi Provider { get; set; }
     }
 }
