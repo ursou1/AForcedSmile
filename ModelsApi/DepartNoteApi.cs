@@ -11,6 +11,7 @@ namespace ModelsApi
         public int Number { get; set; }
         public DateTime DepartDate { get; set; }
         public int ClientId { get; set; }
-        public ProviderApi Provider { get; set; }
+
+        public ClientApi Client { get; set; }//для вывода св-ва Client.Name
     }
 }
