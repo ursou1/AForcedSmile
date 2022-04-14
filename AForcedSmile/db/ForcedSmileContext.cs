@@ -83,7 +83,7 @@ namespace AForcedSmile.db
                     .WithMany(p => p.DeliveryNotes)
                     .HasForeignKey(d => d.ProviderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DeliveryNote_Provider");
+                    .HasConstraintName("FK_DeliveryNote_Provider1");
             });
 
             modelBuilder.Entity<DepartNote>(entity =>

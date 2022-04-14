@@ -14,5 +14,7 @@ namespace ModelsApi
         public string Telephone { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
+
+        public DeliveryNoteApi DeliveryNote { get; set; }//для вывода св-ва DeliveryNote.Number
     }
 }

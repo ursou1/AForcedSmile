@@ -20,5 +20,7 @@ namespace ModelsApi
         public string Image { get; set; }
         public string Description { get; set; }
         public int? SoftDeleteId { get; set; }
+
+        public DeliveryNoteApi DeliveryNote { get; set; }//для вывода св-ва DeliveryNote.Number
     }
 }
