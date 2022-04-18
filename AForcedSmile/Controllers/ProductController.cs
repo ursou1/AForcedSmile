@@ -1,5 +1,6 @@
 ﻿using AForcedSmile.db;
 using Microsoft.AspNetCore.Mvc;
+using ModelsApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,47 +24,53 @@ namespace AForcedSmile.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<ProductApi> Get()
         {
-            return dbContext.Products.ToList();
+            return dbContext.Products.ToList().Select(s=> (ProductApi)s);
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public Product Get(int id)
+        public async Task<ActionResult<ProductApi>> Get(int id)
         {
-            return dbContext.Products.FirstOrDefault(s => s.Id == id);
+            var result = await dbContext.Products.FindAsync(id);
+            if (result == null)
+                return NotFound();
+            return Ok((ProductApi)result);
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public int Post([FromBody] Product value)
+        public async Task<ActionResult<int>> Post([FromBody] ProductApi value)
         {
-            dbContext.Products.Add(value);
-            dbContext.SaveChanges();
-            return value.Id;
+            var newProduct = (Product)value;
+            dbContext.Products.Add(newProduct);
+            await dbContext.SaveChangesAsync();
+            return Ok(newProduct.Id);
         }
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Product value)
+        public async Task<ActionResult> Put(int id, [FromBody] ProductApi value)
         {
-            var oldProduct = dbContext.Products.FirstOrDefault(s => s.Id == id);
+            var oldProduct = await dbContext.Products.FindAsync(id);
             if (oldProduct == null)
-                return;
+                return NotFound();
             dbContext.Entry(oldProduct).CurrentValues.SetValues(value);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
+            return Ok();
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var oldProduct = dbContext.Products.FirstOrDefault(s => s.Id == id);
+            var oldProduct = await dbContext.Products.FindAsync(id);
             if (oldProduct == null)
-                return;
+                return NotFound();
             dbContext.Products.Remove(oldProduct);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
+            return Ok();
         }
     }
 }
