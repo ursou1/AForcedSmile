@@ -10,6 +10,7 @@ namespace AForcedSmile.db
         public int Id { get; set; }
         public int ProductId { get; set; }
         public int PartOfWarehouseId { get; set; }
+        public int ProductCount { get; set; }
 
         public virtual PartOfWarehouse PartOfWarehouse { get; set; }
         public virtual Product Product { get; set; }
