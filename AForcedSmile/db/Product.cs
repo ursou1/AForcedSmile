@@ -18,8 +18,7 @@ namespace AForcedSmile.db
         public int Count { get; set; }
         public decimal Price { get; set; }
         public int UnitId { get; set; }
-        public int PartOfWarehouseId { get; set; }
-        public int DeliveryNoteId { get; set; }
+        public int? DeliveryNoteId { get; set; }
         public int? DepartNoteId { get; set; }
         public int? ProductTypeId { get; set; }
         public string Image { get; set; }

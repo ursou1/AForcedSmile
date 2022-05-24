@@ -134,7 +134,6 @@ namespace AForcedSmile.db
                 entity.HasOne(d => d.DeliveryNote)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.DeliveryNoteId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Product_DeliveryNote");
 
                 entity.HasOne(d => d.DepartNote)

@@ -13,8 +13,7 @@ namespace ModelsApi
         public int Count { get; set; }
         public decimal Price { get; set; }
         public int UnitId { get; set; }
-        public int PartOfWarehouseId { get; set; }
-        public int DeliveryNoteId { get; set; }
+        public int? DeliveryNoteId { get; set; }
         public int? DepartNoteId { get; set; }
         public int? ProductTypeId { get; set; }
         public string Image { get; set; }
@@ -25,5 +24,6 @@ namespace ModelsApi
         public DepartNoteApi DepartNote { get; set; }//для вывода св-ва DeliveryNote.Number
         public ProductTypeApi ProductType { get; set; }//для вывода св-ва ProductType.Title
         public UnitApi Unit { get; set; }//для вывода св-ва Unit.Title
+        public SoftDeleteApi SoftDelete { get; set; }
     }
 }

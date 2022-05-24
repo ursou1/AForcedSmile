@@ -11,5 +11,7 @@ namespace ModelsApi
         public int ProductId { get; set; }
         public int PartOfWarehouseId { get; set; }
         public int ProductCount { get; set; }
+
+        public PartOfWarehouseApi PartOfWareHouse { get; set; }
     }
 }
